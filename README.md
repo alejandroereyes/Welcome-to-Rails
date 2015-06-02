@@ -11,16 +11,14 @@
   * User can set limit on amount of users sent back using `http://localhost:3000/users?limit=10&offset=10`
   * User can offset starting point of users sent back `http://localhost:3000/users?limit=10&offset=10`
   * A user can be deleted via id using `http://localhost:3000/users/1/delete`
-  * A new user can be added to the database using 1http://localhost:3000/users/create?first_name=Jenny&last_name=Jaguar&age=44`
+  * A new user can be added to the database using `http://localhost:3000/users/create?first_name=Jenny&last_name=Jaguar&age=44`
 
 ## How to use
 
-  * Run `rails s` inside the welcome_to_rails folder
+  * Run `rails s` inside the `welcome_to_rails` folder
   * open `http://localhost:3000/` to access the app
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version 2.2.0
 
 * System dependencies
 
@@ -30,11 +28,4 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
