@@ -1,7 +1,6 @@
 class UserController < ApplicationController
   def index
     all_users = User.all
-
     if params.count <= 2
       str_users = string_me(all_users)
       display(str_users)
@@ -17,8 +16,6 @@ class UserController < ApplicationController
                             first_name_value, last_name_value, age_value]).
                             offset(offset_value).
                             limit(limit_value)
-
-      puts "#{params}"
       str_users = string_me(users)
       display(str_users)
     end # params count cond
@@ -27,12 +24,22 @@ class UserController < ApplicationController
   def show_via_id
     if User.exists?(params[:id])
       user = User.find(params[:id])
-      puts "************ #{params} ************"
+      puts "************ #{params} ************" # delete this later
       render text: "#{user.id}) #{user.first_name} #{user.last_name} -- Age: #{user.age}", status: 200
     else
       error_404
     end
   end # show_method
+
+  def delete
+    puts "************* #{params} *************"
+    if User.exists?(params[:id])
+      User.delete(params[:id])
+      render text: "User #{params[:id]} has been DELETED <img src='http://media.giphy.com/media/25quInpfBuSRi/giphy.gif'/>", status: 200
+    else
+      error_404
+    end
+  end # delete
 
   private
 
@@ -43,7 +50,7 @@ class UserController < ApplicationController
   end
 
   def display(user_info)
-    puts "************ #{params} **************"
+    puts "************ #{params} **************" #delete this later
     render text: user_info.join("<img src='https://raw.githubusercontent.com/bertrandom/glitch-assets-parser/master/glitch-assets/cold_taco/cold_taco__x1_iconic_png_1354830854.png'/></p><p>"), status: 200
   end
 
