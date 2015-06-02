@@ -26,6 +26,11 @@ class UserController < ApplicationController
       user = User.find(params[:id])
       puts "************ #{params} ************" # delete this later
       render text: "#{user.id}) #{user.first_name} #{user.last_name} -- Age: #{user.age}", status: 200
+    elsif params[:id] == "create"
+      puts "!!!!!!!!  in create  !!!!!!!!"
+      puts "#{params}"
+      User.create(first_name: params[:first_name], last_name: params[:last_name], age: params[:age])
+      render text: "User: #{params[:first_name]} #{params[:last_name]} Age: #{params[:age]} has been created</br><img src='http://www.performance-forge.com/wp-content/uploads/2011/12/Made-in-the-USA.gif'", status: 200
     else
       error_404
     end
@@ -40,6 +45,11 @@ class UserController < ApplicationController
       error_404
     end
   end # delete
+
+  def create
+    puts "*********** #{params} ***********"
+    render text: "almost there buddy #{params}", status: 200
+  end
 
   private
 
