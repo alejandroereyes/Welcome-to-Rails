@@ -24,13 +24,8 @@ class UserController < ApplicationController
   def show_via_id
     if User.exists?(params[:id])
       user = User.find(params[:id])
-      puts "************ #{params} ************" # delete this later
+      puts "************ #{params} ************"
       render text: "#{user.id}) #{user.first_name} #{user.last_name} -- Age: #{user.age}", status: 200
-    elsif params[:id] == "create"
-      puts "!!!!!!!!  in create  !!!!!!!!"
-      puts "#{params}"
-      User.create(first_name: params[:first_name], last_name: params[:last_name], age: params[:age])
-      render text: "<p>User: #{params[:first_name]} #{params[:last_name]} Age: #{params[:age]} has been created</p><img src='https://bookwormcowboy.com/images/USA.gif'/>", status: 200
     else
       error_404
     end
@@ -44,11 +39,12 @@ class UserController < ApplicationController
     else
       error_404
     end
-  end # delete
+  end
 
   def create
     puts "*********** #{params} ***********"
-    render text: "almost there buddy #{params}", status: 200
+    User.create(first_name: params[:first_name], last_name: params[:last_name], age: params[:age])
+    render text: "<p>User: #{params[:first_name]} #{params[:last_name]} Age: #{params[:age]} has been created</p><img src='https://bookwormcowboy.com/images/USA.gif'/>", status: 200
   end
 
   private
