@@ -18,6 +18,7 @@
   * Run `rails s` inside the `welcome_to_rails` folder
   * open `http://localhost:3000/` to access the app
 
+--------------------
 * Ruby version 2.2.0
 
 * System dependencies
