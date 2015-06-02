@@ -1,6 +1,6 @@
 # Welcome to Rails
 
-  This program using Rails through the browser to process requests and send the appropriate response.
+  This program uses Rails through the browser to process requests and send the appropriate response.
 
 ## Features
 
@@ -18,15 +18,9 @@
   * Run `rails s` inside the `welcome_to_rails` folder
   * open `http://localhost:3000/` to access the app
 
---------------------
+____________________
+
 * Ruby version 2.2.0
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
 
 
