@@ -30,7 +30,7 @@ class UserController < ApplicationController
       puts "!!!!!!!!  in create  !!!!!!!!"
       puts "#{params}"
       User.create(first_name: params[:first_name], last_name: params[:last_name], age: params[:age])
-      render text: "User: #{params[:first_name]} #{params[:last_name]} Age: #{params[:age]} has been created</br><img src='http://www.performance-forge.com/wp-content/uploads/2011/12/Made-in-the-USA.gif'", status: 200
+      render text: "<p>User: #{params[:first_name]} #{params[:last_name]} Age: #{params[:age]} has been created</p><img src='https://bookwormcowboy.com/images/USA.gif'/>", status: 200
     else
       error_404
     end
