@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get 'users', to: 'user#index'
 
-  get 'users/:id', to: 'user#show'
+  get 'users/:id', to: 'user#show_via_id'
+
+  get 'users/?', to: 'user#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
